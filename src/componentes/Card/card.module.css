@@ -1,0 +1,31 @@
+.card{
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 180px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    margin: 10px;
+    text-align: center;
+}
+
+.imagem{
+    width: 100%;
+}
+
+.h2{
+    font-weight: 400;
+    font-size: 1em;
+    margin:5px;
+}
+
+.h3{
+    font-weight: 400;
+    font-size: 0.9em;
+    margin: 5px;
+}
+
+.h4{
+    font-weight: 350;
+    font-size: 0.8em;
+    color: #3A61B6;
+    margin: 10px;
+}
