@@ -1,0 +1,22 @@
+.cardProjeto{
+    border: 1px solid #ddd;
+    margin: 1em;
+    border-radius: 10px;
+    padding-left: 1em;
+    width: 350px;
+    
+}
+
+.h1{
+    font-size: 26px;
+}
+
+.div{
+    display: flex;
+}
+
+p{
+    margin-left: 0.5em;
+    font-size: 18px;
+    margin: 10px;
+}

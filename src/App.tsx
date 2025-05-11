@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './app.module.css';
 import Card from './componentes/Card';
+import CardProjeto from './componentes/CardProjeto';
 
 function App() {
   return (
@@ -15,6 +16,14 @@ function App() {
         nomeTema="Saúde e Qualidade de Vida no Trabalho"
         liderTema="Bárbara"
         projetos="3 projetos"/>
+
+      <CardProjeto
+        nomeProjeto="Uso Racional de Papel"
+        nomeTema="Uso Racional de Recursos"
+        nomeLider="Wanderley"
+        statusImagem="/iconeAtencao.svg"
+        status="Informações incompletas"/>
+
     </div>
   );
 }
