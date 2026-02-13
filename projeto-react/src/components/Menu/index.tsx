@@ -6,12 +6,16 @@ type AvailableThemes = 'dark' | 'light';
 
 export function Menu (){
     const [theme, setTheme] = useState<AvailableThemes>(() => {
-        const storageTheme = localStorage.getItem('theme') as AvailableThemes;
+        const storageTheme = localStorage.getItem('theme') as AvailableThemes || 'dark';
         return storageTheme;
     });
-    
-    const icon = theme === 'light' ? <SunIcon/>  :  <MoonIcon/>;
-    
+
+    const icon = theme === 'light' ? <MoonIcon/>  :  <SunIcon/>;
+    // const icon = {
+    //     dark: <SunIcon/>,
+    //     light: <MoonIcon/>,
+    // };
+
     function handleThemeChange(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
         event.preventDefault();
 
@@ -43,6 +47,7 @@ export function Menu (){
 
             <a onClick={handleThemeChange} href="/" className={styles.menuLink} aria-label="Modo escuro/Modo claro" title="Modo escuro/Modo claro">
                 {icon}
+                {/* {icon[theme]} */}
             </a>
         </nav>
     );
