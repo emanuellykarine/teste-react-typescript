@@ -4,7 +4,7 @@ type DefaultCicleProps = {
     cicleText: string;
 
 }
-export function Cicle( { cicleText } : DefaultCicleProps) {
+export function Cycles( { cicleText } : DefaultCicleProps) {
     return (
         <div className={styles.cycles}>
             <p>{cicleText}</p>
