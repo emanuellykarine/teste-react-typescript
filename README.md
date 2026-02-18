@@ -1,38 +1,33 @@
-# Getting Started with Create React App
-Estudo usando typescript e react
-## Available Scripts
+vite é uma ferramente de construção de projetos frontend que serve pra fornecer uma experiencia de desenvolvimento mais rápida e leve.
 
-In the project directory, you can run:
+npm é um gerenciador de pacotes usado pra instalar, gerencia e atualizar dependencias de projeto
+npx é o executor.
 
-### `npm start`
+react é uma biblioteca do js, usa single page application. não precisa usar o next pra usar react, pode usar o vite por exemplo 
+next é um framework que usa react 
+vue é um framework
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ npm create vite@latest
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ props - propriedade 
+ 
 
-### `npm run build`
+ funções que vão ser utilizadas no on são criadas com handle...
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ arrow function: onClick = {handleClick}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ let é uma variável 
+ const é constante não pode ser alterada posteriormente 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ - sempre que usa hook ele vem com o valor e com uma função, tem que usar sempre um array 
+ const [numero, setNumero] = useState(0);
+ setNumero seria uma função 
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ const[numero, setNumero] = useState(0 pode ser usado uma arrow funtion aq dentro);
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ function handleClick (){
+    setNumero(prevState => prevState + 1);
+ }
