@@ -32,3 +32,8 @@ Funções que vão ser utilizadas no on são criadas com handle...
 -  Sempre precisa saber onde vamos inserir o estado por que sempre vamos mover o estado pro componente pai dele depois unifica esses componentes dentro de um contexto.
 
 - Sempre que for alterar um objeto ou um array mutável, precisa copiar o prevState (...prevState) e depois que altera no novo objeto ou array.
+
+- Abraça todos os componentes que vão usar aquele mesmo contexto com o provider e eles vão ter o mesmo valor 
+<TaskContext.Provider value={{ outraCoisa: 321 }}>
+   <Home />
+</TaskContext.Provider>
