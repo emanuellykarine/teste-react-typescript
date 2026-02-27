@@ -10,7 +10,7 @@ NPX é o executor.
 
 REACT é uma biblioteca do js, usa single page application. Não precisa usar o next pra usar react, pode usar o vite por exemplo .
 
-NEXT é um framework que usa react.
+NEXT é um framework que usa react. Tem o server side rendering, ele renderiza tudo no lado do servidor antes de ir pro cliente.
 VUE é outra opção de framework (não usa react).
 
 PROPS - propriedades
