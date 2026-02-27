@@ -37,3 +37,13 @@ Funções que vão ser utilizadas no on são criadas com handle...
 <TaskContext.Provider value={{ outraCoisa: 321 }}>
    <Home />
 </TaskContext.Provider>
+
+
+### React e Next 
+- dentro de app sempre cria as pastas com o nome da page que você quer. ex: app/about/page.tsx -> /about 
+
+- layout é o esqueleto do site, algo que repete em todas as pages e o layout raiz precisa tem html e o body, pode ser criado outros layouts dentro das pastas mas ele vem como filho do layout da raiz.
+
+- server component, componente por padrão é server component, pode ser assincrono, vc não consegue usar metodos do navegador num server component (ex onclick). executados exclusivamente no servidor e não enviam js adicional pro navegador. busca de dados, conteúdo estático, consultas complexas.são carregados mais rápidos pq são menores e carregam antes de serem enviados pro cliente.
+
+- client componente, coloca o 'useCliente', não pode ser assincrono.raramente converte a page inteira em client component, transforma so um componente menor. utiliza os hooks e interatividade.
