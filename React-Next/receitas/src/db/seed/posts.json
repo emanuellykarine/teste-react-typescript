@@ -1,0 +1,124 @@
+{
+  "posts": [
+    {
+      "id": "99f8add4-7684-4c16-a316-616271db199e",
+      "title": "Bolo de Chocolate Fofinho",
+      "slug": "bolo-de-chocolate-fofinho",
+      "excerpt": "Uma receita simples e deliciosa para um bolo de chocolate macio e perfeito para o café da tarde.",
+      "content": "Misture 3 ovos, 2 xícaras de açúcar, 1 xícara de leite, 1/2 xícara de óleo, 2 xícaras de farinha de trigo e 1 xícara de chocolate em pó. Acrescente 1 colher de fermento por último. Asse em forno pré-aquecido a 180°C por aproximadamente 40 minutos.",
+      "coverImageUrl": "/images/BoloChocolate.png",
+      "published": true,
+      "createdAt": "2025-04-08T00:24:38.616Z",
+      "updatedAt": "2025-04-08T00:33:56.907Z",
+      "author": "Maria Madalena"
+    },
+    {
+      "id": "afa086e4-53e4-492d-acf2-7c2966d83fcd",
+      "title": "Lasanha Caseira Tradicional",
+      "slug": "lasanha-caseira-tradicional",
+      "excerpt": "Aprenda a preparar uma deliciosa lasanha com molho bolonhesa e muito queijo.",
+      "content": "Refogue carne moída com alho e cebola, acrescente molho de tomate e temperos. Monte camadas de massa, molho, presunto e queijo. Finalize com queijo e leve ao forno a 200°C por 30 minutos.",
+      "coverImageUrl": "/images/Lasanha.png",
+      "published": true,
+      "createdAt": "2025-04-07T00:24:38.616Z",
+      "updatedAt": "2025-04-07T00:33:56.907Z",
+      "author": "Maria Madalena"
+    },
+    {
+      "id": "1b6a5f57-8a19-4933-91f4-1af678464ded",
+      "title": "Panqueca Americana",
+      "slug": "panqueca-americana",
+      "excerpt": "Panquecas macias e perfeitas para um café da manhã especial.",
+      "content": "Misture 1 xícara de farinha, 1 colher de açúcar, 1 ovo, 1 xícara de leite e 1 colher de fermento. Frite pequenas porções em frigideira antiaderente até dourar dos dois lados. Sirva com mel ou frutas.",
+      "coverImageUrl": "/images/PanquecaAmericana.png",
+      "published": true,
+      "createdAt": "2025-04-06T00:24:38.616Z",
+      "updatedAt": "2025-04-06T00:33:56.907Z",
+      "author": "Maria Madalena"
+    },
+    {
+      "id": "9eb8b7ac-2b48-4835-880a-a1c798e1a595",
+      "slug": "strogonoff-de-frango-cremoso",
+      "title": "Strogonoff de Frango Cremoso",
+      "author": "Maria Madalena",
+      "content": "Refogue cubos de frango com alho e cebola. Acrescente ketchup, mostarda e creme de leite. Ajuste o sal e finalize com champignon. Sirva com arroz branco e batata palha.",
+      "excerpt": "Uma versão prática e saborosa do clássico strogonoff brasileiro.",
+      "coverImageUrl": "/images/StrogonoffFrango.png",
+      "published": true,
+      "createdAt": "2025-04-05T00:24:38.616Z",
+      "updatedAt": "2025-04-05T00:33:56.907Z"
+    },
+    {
+      "id": "6b204dab-2312-4525-820a-a0463560835f",
+      "title": "Salada Caesar Clássica",
+      "slug": "salada-caesar-classica",
+      "excerpt": "Uma salada leve com molho especial e croutons crocantes.",
+      "content": "Misture alface americana, frango grelhado em tiras e croutons. Prepare o molho com maionese, parmesão, alho, limão e azeite. Finalize com queijo parmesão ralado.",
+      "coverImageUrl": "/images/SaladaCaesar.png",
+      "published": false,
+      "createdAt": "2025-03-30T07:11:33",
+      "updatedAt": "2025-04-05T00:14:03.175Z",
+      "author": "Maria Madalena"
+    },
+    {
+      "id": "76396dd3-9581-43b5-856d-fe1a78714e8c",
+      "title": "Pão de Queijo Mineiro",
+      "slug": "pao-de-queijo-mineiro",
+      "excerpt": "Receita tradicional com polvilho e queijo meia cura.",
+      "content": "Misture 500g de polvilho doce, 250ml de leite quente, 100ml de óleo e 2 ovos. Acrescente 200g de queijo ralado. Modele bolinhas e asse a 180°C por 25 minutos.",
+      "coverImageUrl": "/images/PaoDeQueijo.png",
+      "published": true,
+      "createdAt": "2025-03-08T13:13:13",
+      "updatedAt": "2025-03-08T13:13:13",
+      "author": "Maria Madalena"
+    },
+    {
+      "id": "bf5c7dae-06a4-4155-9c01-a56e02956496",
+      "title": "Brigadeiro Gourmet",
+      "slug": "brigadeiro-gourmet",
+      "excerpt": "O doce brasileiro favorito em uma versão ainda mais cremosa.",
+      "content": "Leve ao fogo 1 lata de leite condensado, 1 colher de manteiga e 3 colheres de chocolate em pó. Mexa até desgrudar do fundo da panela. Deixe esfriar, enrole e passe no granulado.",
+      "coverImageUrl": "/images/Brigadeiro.png",
+      "published": true,
+      "createdAt": "2025-02-22T04:32:54",
+      "updatedAt": "2025-02-22T04:32:54",
+      "author": "Maria Madalena"
+    },
+    {
+      "id": "bc9a540f-66a9-4ab0-8d50-6216ab1cac53",
+      "title": "Torta de Limão Fácil",
+      "slug": "torta-de-limao-facil",
+      "excerpt": "Uma sobremesa refrescante com base crocante e recheio cremoso.",
+      "content": "Misture biscoito triturado com manteiga para formar a base. Para o recheio, bata leite condensado com suco de limão. Despeje sobre a base e leve à geladeira por 2 horas. Finalize com raspas de limão.",
+      "coverImageUrl": "/images/TortaDeLimao.png",
+      "published": true,
+      "createdAt": "2025-02-11T20:59:30",
+      "updatedAt": "2025-02-11T20:59:30",
+      "author": "Maria Madalena"
+    },
+    {
+      "id": "3993fcf7-2490-48ed-be2e-58c2030ee764",
+      "title": "Arroz à Grega Colorido",
+      "slug": "arroz-a-grega-colorido",
+      "excerpt": "Uma opção saborosa e colorida para acompanhar carnes e aves.",
+      "content": "Refogue cenoura, ervilha, milho e pimentão. Misture ao arroz já cozido e finalize com cheiro-verde. Sirva quente.",
+      "coverImageUrl": "/images/ArrozGrega.png",
+      "published": true,
+      "createdAt": "2025-01-15T04:54:26",
+      "updatedAt": "2025-01-15T00:54:26",
+      "author": "Maria Madalena"
+    },
+    {
+      "id": "be3f14a1-0105-4e2e-bfc9-133a05e7bda6",
+      "title": "Mousse de Maracujá",
+      "slug": "mousse-de-maracuja",
+      "excerpt": "Sobremesa rápida com apenas três ingredientes.",
+      "content": "Bata no liquidificador 1 lata de leite condensado, 1 lata de creme de leite e 1 xícara de suco concentrado de maracujá. Leve à geladeira por 3 horas antes de servir.",
+      "coverImageUrl": "/images/MousseMaracuja.png",
+      "published": false,
+      "createdAt": "2025-01-07T22:54:10",
+      "updatedAt": "2025-01-07T22:54:10",
+      "author": "Maria Madalena"
+    }
+  ]
+}
