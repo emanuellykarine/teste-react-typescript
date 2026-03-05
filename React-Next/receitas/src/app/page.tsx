@@ -2,18 +2,19 @@ import { SpinLoader } from "../components /SpinLoader";
 import { PostList } from "../components /PostList";
 import { Suspense } from "react";
 import { Header } from "../components /Header";
+import { Container } from "../components /Container";
+import { Footer } from "../components /Footer";
 export default async function HomePage() {
   return (
-    <div>
+    <Container>
       <Header/>
 
       <Suspense fallback={<SpinLoader />}>
         <PostList />
       </Suspense>
 
-      <footer>
-        <p className='text-6xl font-bold text-center py-8'>Footer</p>
-      </footer>
-    </div>
+      <Footer/>
+      
+    </Container>
   );
 }

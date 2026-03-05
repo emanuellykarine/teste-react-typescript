@@ -18,6 +18,29 @@ PROPS - propriedades
 LET é uma variável 
 CONST é constante não pode ser alterada posteriormente 
 
+SEO (Search Engine Optimization) conjunto de técnicas para otimizar sites para que motores de busca (como o Google) os posicionem melhor.
+
+### Preferências 
+Quando Usar Cada Um:
+
+   Use VITE quando:
+   - Já tem backend separado
+   - Não precisa de SEO crítico
+   - Quer desenvolvimento mais rápido
+   - Aplicação mais simples (dashboard, admin, etc.)
+
+   Use NEXT quando:
+   - Precisa de SSR/SEO crítico
+   - Quer tudo integrado em um lugar
+   - Precisa de rotas de API simples
+
+Já tem um backend separado, o Vite é provavelmente a melhor escolha porque:
+
+   - Seu backend já resolve a parte de servidor
+   - Frontend fica mais simples e rápido
+   - Menos complexidade desnecessária
+   - Resumo: Com backend separado → Vite é mais eficiente que Next.js!
+
 ### Exemplos e explicações
 Funções que vão ser utilizadas no on são criadas com handle...
  function handleClick (){
@@ -47,3 +70,10 @@ Funções que vão ser utilizadas no on são criadas com handle...
 - server component, componente por padrão é server component, pode ser assincrono, vc não consegue usar metodos do navegador num server component (ex onclick). executados exclusivamente no servidor e não enviam js adicional pro navegador. busca de dados, conteúdo estático, consultas complexas.são carregados mais rápidos pq são menores e carregam antes de serem enviados pro cliente.
 
 - client componente, coloca o 'useCliente', não pode ser assincrono.raramente converte a page inteira em client component, transforma so um componente menor. utiliza os hooks e interatividade.
+
+### Tailwind
+- mobile first
+
+sm:text-5xl/normal sm:py-10
+md:text-6xl/normal md:py-11
+lg:text-7xl/normal lg:py-12
