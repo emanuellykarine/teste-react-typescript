@@ -61,6 +61,13 @@ Funções que vão ser utilizadas no on são criadas com handle...
    <Home />
 </TaskContext.Provider>
 
+- useReducer <- hook do React que recebe um reducer e um estado inicial
+- reducer <- função que recebe o estado atual e uma ação, e retorna o novo estado
+- state <- o estado atual
+- action <- a ação disparada, geralmente é um objeto com type e (opcionalmente) payload
+- type <- o tipo da ação, geralmente uma string (pode ser enum, constante, etc)
+- payload <- os dados extras enviados junto com a action, se necessário para atualizar o estado
+
 
 ### React e Next 
 - dentro de app sempre cria as pastas com o nome da page que você quer. ex: app/about/page.tsx -> /about 
