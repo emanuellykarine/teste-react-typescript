@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    background-color: rgba(236, 236, 236, 0.582);
+}
+
+#inputs{
+    display: flex;
+}
+
+#inputs > div > div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+/* Espaçamento entre label e input */
+#inputs label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Estilização dos inputs */
+#inputs input {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+form {
+    margin: 20px 0 20px 0px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 5px 20px rgb(177, 177, 177);
+}
+
+#right {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Altura total da viewport */
+}
+
+#header {
+    flex: 1; /* Ocupa espaço disponível */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    padding: 2rem;
+}
+
+#header p {
+    padding-top: 50px;
+    font-weight: bold;
+    font-size: large;
+}
+
+#form {
+    flex: 2; /* Ocupa mais espaço que os outros */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+#right > div:last-child {
+    flex: 1; /* Mesma altura que o header */
+    padding: 2rem;
+}
+
+button {
+    background-color: #596D48;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    width: 150px;
+    font-weight: bolder;
+}
+
+#footer a{
+    color: #596D48;
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+#footer {
+    margin-top: 20px;
+    display: flex;
+}
