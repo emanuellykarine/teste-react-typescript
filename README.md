@@ -84,3 +84,8 @@ Funções que vão ser utilizadas no on são criadas com handle...
 sm:text-5xl/normal sm:py-10
 md:text-6xl/normal md:py-11
 lg:text-7xl/normal lg:py-12
+
+### Django 
+django-admin startproject nome_projeto
+python manage.py startapp nome_app
+python manage.py run server 
