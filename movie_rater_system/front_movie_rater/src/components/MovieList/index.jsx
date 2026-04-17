@@ -30,14 +30,23 @@ export default function MovieList() {
         fetchMovies();
     }, [])
 
-        if (error) return <h1>{error}</h1>;
+        if (error) return <h1 className='text-white'>{error}</h1>;
 
     return (
-        <div>
-            <h2 className="text-2xl text-white">Movie List</h2>
+        <div className='text-white'>
+            <h2 className="text-2xl">Filmes</h2>
+            <h3 className='text-lg'>Confira todos os filmes cadastrados</h3>
         
             {movies.map(movie => {
-                return <h2>{movie.title}</h2>
+                return (
+                <div key={movie.id} className='border-2 border-white w-60'>
+                    <figure>
+                        <img src={movie.poster_url} alt={movie.title} />
+                    </figure>
+                    <h2>{movie.title}</h2>
+                    <p>{movie.description}</p>
+                </div>
+                )
             })}
         </div>
     );

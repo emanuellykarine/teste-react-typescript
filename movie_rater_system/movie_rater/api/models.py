@@ -5,6 +5,7 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 # Create your models here.
 class Movie(models.Model):
     title = models.CharField(max_length=32)
+    poster_url = models.URLField(max_length=500, blank=True, null=True, help_text="URL do poster do filme")
     description = models.TextField(max_length=360)
 
     def number_of_ratings(self):
