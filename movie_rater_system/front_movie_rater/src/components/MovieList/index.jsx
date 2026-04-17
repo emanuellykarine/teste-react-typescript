@@ -34,10 +34,10 @@ export default function MovieList() {
 
     return (
         <div>
-            <h2 className="text-2xl">Movie List</h2>
+            <h2 className="text-2xl text-white">Movie List</h2>
         
             {movies.map(movie => {
-                return <h2>{movie}</h2>
+                return <h2>{movie.title}</h2>
             })}
         </div>
     );
