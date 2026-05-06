@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import MovieList from './components/MovieList';
 import SideBar from './components/SideBar';
-import MovieDetails from './components/MovieDetails';
+import HomePage  from './pages/HomePage';
+import MovieDetailsPage from './pages/MovieDetailsPage';
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
 
         <main className="flex-1">
           <Routes>
-            <Route path="/" element={<MovieList />} />
-            <Route path="/movie/:id" element={<MovieDetails />} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/movie/:id" element={<MovieDetailsPage />} />
           </Routes>
         </main>
       </div>

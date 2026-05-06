@@ -7,7 +7,8 @@ class Movie(models.Model):
     title = models.CharField(max_length=32)
     poster_url = models.URLField(max_length=500, blank=True, null=True, help_text="URL do poster do filme")
     description = models.TextField(max_length=360)
-
+    year = models.IntegerField(validators=[MinValueValidator(1888), MaxValueValidator(2100)], blank=True, null=True, help_text="Ano de lançamento do filme")
+    
     def number_of_ratings(self):
         ratings = Rating.objects.filter(movie=self)
         return len(ratings)
@@ -16,15 +17,16 @@ class Movie(models.Model):
         sum = 0
         ratings = Rating.objects.filter(movie=self)
         for rating in ratings:
-            sum += rating
-        
-        if len(ratings) > 0:
-            return sum / len(ratings)
+            sum += rating.stars
+
+        if ratings.exists():
+            return sum / ratings.count()
         else:
             return 0
 
     def __str__(self):
         return f'{self.title}'
+    
 class Rating(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name='ratings')
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ratings')

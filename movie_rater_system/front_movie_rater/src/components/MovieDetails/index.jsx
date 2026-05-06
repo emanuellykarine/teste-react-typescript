@@ -1,42 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Rating from '@mui/material/Rating';
 
-export default function MovieDetails() {
-    const { id } = useParams();
-    const [movie, setMovie] = useState(null);
-    const [error, setError] = useState(null);
-
-    useEffect(() => {
-        const fetchMovie = async () => {
-            try {
-                const response = await fetch(`http://127.0.0.1:8000/api/movies/${id}`, {
-                    headers: {
-                        "Authorization": "Token 44aa7f4e5090a670f7f7c11a00db5b680c8424ae"
-                    }
-                });
-                
-                if (!response.ok) {
-                    setError("Erro ao buscar filme");
-                    return;
-                }
-
-                const result = await response.json();
-                setMovie(result);
-            } catch (err) {
-                setError("Erro de rede: " + err.message);
-            }
-        };
-
-        fetchMovie();
-    }, [id]);
-
-    if (error) return <h1 className='text-white'>{error}</h1>;
-    if (!movie) return <h1 className='text-white'>Carregando...</h1>;
-
+export default function MovieDetails({ movie }) {
     return (
         <div className='text-white p-10'>
-            <Link to="/" className='text-blue-400 hover:text-blue-300 mb-4 inline-block'>
-                ← Voltar para lista
+            <Link to="/" className='font-bold text-white hover:text-blue-300 mb-10 flex flex-col items-start'>
+                ← Voltar
             </Link>
             
             <div className='flex gap-8'>
@@ -45,12 +15,27 @@ export default function MovieDetails() {
                     alt={movie.title} 
                     className='w-80 h-auto rounded-lg'
                 />
-                <div>
-                    <h1 className='text-4xl font-bold mb-4'>{movie.title}</h1>
-                    <p className='text-lg text-gray-300'>{movie.description}</p>
-                    <p className='text-yellow-400 mt-4'>
-                        Avaliação: {movie.avg_rating ? movie.avg_rating.toFixed(1) : 'Sem avaliações'}
-                    </p>
+                <div className='flex flex-col items-start'>
+                    <div className='flex'>
+                        <p className='text-4xl font-bold m-0'>{movie.title}</p>
+                        <p className='text-sm ml-2 mt-2 p-1 bg-[#242a44] rounded-lg pl-4 pr-4'>{movie.year}</p>
+                    </div>
+                   
+                    <p className='text-justify'>{movie.description}</p>
+
+                    <div className='w-64 bg-[#242a44] p-5 pt-1 flex flex-col items-start rounded-lg'>
+                        <p className='font-bold'>Avaliação média</p>
+                        <p className='font-bold text-5xl m-0 mb-2'>
+                            {movie.avg_rating.toFixed(1)}
+                        </p>
+                        <Rating name="half-rating-read" size='large' defaultValue={movie.avg_rating} precision={0.5} readOnly />
+                        <p className='text-sm'>
+                            {movie.number_of_ratings === 1 
+                                ? `${movie.number_of_ratings} avaliação` 
+                                : `${movie.number_of_ratings} avaliações`
+                            }
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
