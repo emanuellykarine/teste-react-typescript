@@ -1,17 +1,38 @@
-export default function SideBar(){
+import { FaFilm } from "react-icons/fa";
+import { FaPlusCircle } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa";
+import { FaSignOutAlt } from "react-icons/fa";
+import { MdMovieFilter } from "react-icons/md";
+import { Link } from "react-router-dom";
+
+export default function SideBar( {onLogout}){
     return (
         <div className="flex flex-col items-start p-4 w-fit min-h-screen">
             <div className="px-4">
-                <div className='flex text-2xl font-bold'>
+                <div className='flex items-center gap-2 text-2xl font-bold'>
+                    <MdMovieFilter className="text-purple-800"/>
                     <p className='text-white'>Movie</p>
                     <p className='text-purple-800'>Rate</p>
                 </div>
             </div>
 
             <nav className="flex flex-col text-lg text-gray-500 font-semibold list-none items-start mt-4">
-                <li className="w-full h-12 flex items-center px-4 mb-2 cursor-pointer hover:text-white hover:bg-slate-600 rounded">Filmes</li>
-                <li className="w-full h-12 flex items-center px-4 mb-2 cursor-pointer hover:text-white hover:bg-slate-600 rounded">Adicionar Filme</li>
-                <li className="w-full h-12 flex items-center px-4 mb-2 cursor-pointer hover:text-white hover:bg-slate-600 rounded">Sair</li>
+                
+                <Link to="/" className="w-full h-12 flex items-center gap-3 px-4 mb-2 cursor-pointer hover:text-white hover:bg-slate-600 rounded no-underline text-gray-500"> 
+                    <FaFilm/> Filmes
+                </Link>
+            
+                <Link to="/adicionar-filme" className="w-full h-12 flex items-center gap-3 px-4 mb-2 cursor-pointer hover:text-white hover:bg-slate-600 rounded no-underline text-gray-500">
+                    <FaPlusCircle/> Adicionar Filme
+                </Link>
+                
+                <Link to="/perfil" className="w-full h-12 flex items-center gap-3 px-4 mb-2 cursor-pointer hover:text-white hover:bg-slate-600 rounded no-underline text-gray-500">
+                    <FaRegUser/> Meu Perfil
+                </Link>
+
+                <li onClick={onLogout} className="w-full h-12 flex items-center gap-3 px-4 mb-2 cursor-pointer hover:text-white hover:bg-slate-600 rounded no-underline text-gray-500">
+                    <FaSignOutAlt/> Sair
+                </li>
             </nav>
         </div>
     );

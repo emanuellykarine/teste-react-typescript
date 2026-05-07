@@ -8,6 +8,8 @@ class Movie(models.Model):
     poster_url = models.URLField(max_length=500, blank=True, null=True, help_text="URL do poster do filme")
     description = models.TextField(max_length=360)
     year = models.IntegerField(validators=[MinValueValidator(1888), MaxValueValidator(2100)], blank=True, null=True, help_text="Ano de lançamento do filme")
+    genre = models.CharField(max_length=32, blank=True, null=True, help_text="Gênero do filme")
+    director = models.CharField(max_length=32, blank=True, null=True, help_text="Diretor do filme")
     
     def number_of_ratings(self):
         ratings = Rating.objects.filter(movie=self)

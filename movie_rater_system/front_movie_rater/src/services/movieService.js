@@ -2,7 +2,7 @@ const BASE_URL = 'http://127.0.0.1:8000/api';
 
 const getHeaders = () => ({
     "Content-Type": "application/json",
-    "Authorization": `Token 44aa7f4e5090a670f7f7c11a00db5b680c8424ae`
+    "Authorization": `Token ${localStorage.getItem('token')}`
 });
 
 export const movieService = {

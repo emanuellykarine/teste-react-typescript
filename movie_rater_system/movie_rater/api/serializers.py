@@ -4,9 +4,19 @@ from django.contrib.auth.models import User
 from rest_framework.authtoken.models import Token
 
 class MovieSerializer(serializers.ModelSerializer):
+    user_rating = serializers.SerializerMethodField()
+
+    def get_user_rating(self, obj):
+        request = self.context.get('request')
+        if request and request.user.is_authenticated:
+            user = request.user
+            rating = Rating.objects.filter(user=user, movie=obj).first()
+            return rating.stars if rating else None
+        return None
+    
     class Meta:
         model = Movie
-        fields = ('id', 'title', 'description', 'number_of_ratings', 'poster_url', 'year', 'avg_rating')
+        fields = ('id', 'title', 'description', 'year', 'genre', 'director', 'poster_url', 'number_of_ratings', 'avg_rating', 'user_rating')
 
 class RatingSerializer(serializers.ModelSerializer):
     class Meta:

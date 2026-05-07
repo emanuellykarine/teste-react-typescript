@@ -1,10 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Rating from '@mui/material/Rating';
 
 export default function MovieDetails({ movie }) {
     return (
-        <div className='text-white p-10'>
+        <div>
             <Link to="/" className='font-bold text-white hover:text-blue-300 mb-10 flex flex-col items-start'>
                 ← Voltar
             </Link>
@@ -23,20 +22,10 @@ export default function MovieDetails({ movie }) {
                    
                     <p className='text-justify'>{movie.description}</p>
 
-                    <div className='w-64 bg-[#242a44] p-5 pt-1 flex flex-col items-start rounded-lg'>
-                        <p className='font-bold'>Avaliação média</p>
-                        <p className='font-bold text-5xl m-0 mb-2'>
-                            {movie.avg_rating.toFixed(1)}
-                        </p>
-                        <Rating name="half-rating-read" size='large' defaultValue={movie.avg_rating} precision={0.5} readOnly />
-                        <p className='text-sm'>
-                            {movie.number_of_ratings === 1 
-                                ? `${movie.number_of_ratings} avaliação` 
-                                : `${movie.number_of_ratings} avaliações`
-                            }
-                        </p>
-                    </div>
+                    <p><b>Gênero: </b> {movie.genre}</p>
+                    <p><b>Diretor:</b> {movie.director}</p>
                 </div>
+
             </div>
         </div>
     );
