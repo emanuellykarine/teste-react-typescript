@@ -15,6 +15,7 @@ export const authService = {
         if (!response.ok) throw new Error("Usuário ou senha inválidos");
         const data = await response.json();
         localStorage.setItem('token', data.token); // ← salva o token
+        localStorage.setItem('username', username);
         return data;
     },
 
@@ -24,5 +25,9 @@ export const authService = {
 
     isAuthenticated: () => {
         return !!localStorage.getItem('token');
+    },
+
+    getUsername: () => {
+        return localStorage.getItem('username');
     }
 };

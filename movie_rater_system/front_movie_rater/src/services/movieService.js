@@ -30,7 +30,11 @@ export const movieService = {
             headers: getHeaders(),
             body: JSON.stringify(movieData)
         });
-        if (!response.ok) throw new Error("Erro ao criar filme");
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Erro do backend:', errorData); // ← mostra o erro exato
+            throw new Error(JSON.stringify(errorData));
+        }
         return response.json();
     },
 
