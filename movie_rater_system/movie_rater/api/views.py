@@ -56,3 +56,10 @@ class RatingViewSet(viewsets.ModelViewSet):
     def create(self, request, *args, **kwargs):
         response = {'message': 'You cant create rating like that'}
         return Response(response, status=status.HTTP_400_BAD_REQUEST)
+
+    @action(detail=False, methods=['GET'])
+    def user_ratings(self, request):
+        user = request.user
+        ratings = Rating.objects.filter(user=user)
+        serializer = RatingSerializer(ratings, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)

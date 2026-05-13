@@ -4,7 +4,7 @@ export default function MovieCard({ movie, onClick }) {
     return (
         <div
             onClick={() => onClick(movie)}
-            className='cursor-pointer border-2 border-gray-300 w-[210px] bg-slate-800 rounded-lg hover:border-white transition-colors overflow-hidden'>
+            className='cursor-pointer border-2 border-gray-300 w-[210px] bg-slate-800 rounded-lg hover:bg-slate-600 transition-colors overflow-hidden'>
             <figure className='m-0'>
                 <img src={movie.poster_url} alt={movie.title} className='w-full h-60 object-cover rounded-t-lg' />
             </figure>

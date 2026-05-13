@@ -3,3 +3,16 @@
   text-align: center;
 }
 
+.nav-small {
+  display: none
+}
+
+@media screen and (max-width: 44em) {
+  .nav-small{
+    display: block
+  }
+
+  .sidebar {
+    display: none
+  }
+}

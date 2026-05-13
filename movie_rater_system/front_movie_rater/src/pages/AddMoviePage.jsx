@@ -34,8 +34,8 @@ export default function AddMoviePage() {
     }
 
     return (
-        <div className='text-white pl-10 pt-8'>
-            <Header title={'Adicionar Filme'} description={'Preencha os dados do filme'}/>
+        <div className='text-white pl-10'>
+            <Header title={'Adicionar Filme'} breadcrumbs={[ {label: 'Filmes', path: '/'}, {label: 'Adicionar filme'}]} description={'Preencha os dados do filme'}/>
 
             <form onSubmit={handleSubmit} className="flex flex-col items-start gap-4 w-full max-w-2xl">
                 

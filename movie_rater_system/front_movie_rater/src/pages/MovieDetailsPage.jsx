@@ -4,6 +4,7 @@ import { movieService } from '../services/movieService';
 import MovieDetails from '../components/MovieDetails';
 import MovieAverageRating from '../components/MovieAverageRating';
 import MovieRating from '../components/MovieRating';
+import Header from '../components/Header';
 
 export default function MovieDetailsPage() {
     const { id } = useParams();
@@ -26,7 +27,9 @@ export default function MovieDetailsPage() {
     if (!movie) return <h1 className='text-white'>Carregando...</h1>;
 
     return (
-    <div className='text-white p-10'>
+    <div className='text-white p-10 pt-0'>
+        <Header breadcrumbs={[ {label: 'Filmes', path: '/'}, {label: movie.title}]}/>
+
        <MovieDetails movie={movie} /> 
        <div className='flex gap-4'>
             <MovieAverageRating movie={movie}/>

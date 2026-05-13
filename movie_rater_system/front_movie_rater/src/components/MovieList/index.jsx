@@ -10,7 +10,7 @@ export default function MovieList({ movies }) {
     }
 
     return (
-        <div className='grid grid-cols-5 gap-2'>
+        <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-2'>
             {movies.map(movie => (
                 <MovieCard key={movie.id} movie={movie} onClick={movieClicked} />
             ))}

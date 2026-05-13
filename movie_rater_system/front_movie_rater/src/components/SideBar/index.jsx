@@ -3,11 +3,19 @@ import { FaPlusCircle } from "react-icons/fa";
 import { FaRegUser } from "react-icons/fa";
 import { FaSignOutAlt } from "react-icons/fa";
 import { MdMovieFilter } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 
 export default function SideBar( {onLogout}){
+
+    const location = useLocation(); // ← pega a rota atual
+
+    const linkClass = (path) => 
+        `w-full h-12 flex items-center gap-3 px-4 mb-2 cursor-pointer rounded no-underline
+        ${location.pathname === path ? 'text-white bg-slate-600' : 'text-gray-500 hover:text-white hover:bg-slate-600'}`;
+    
+
     return (
-        <div className="flex flex-col items-start p-4 w-fit min-h-screen">
+        <div className="sidebar flex flex-col items-start p-4 w-fit min-h-screen">
             <div className="px-4">
                 <div className='flex items-center gap-2 text-2xl font-bold'>
                     <MdMovieFilter className="text-purple-800"/>
@@ -18,15 +26,15 @@ export default function SideBar( {onLogout}){
 
             <nav className="flex flex-col text-lg text-gray-500 font-semibold list-none items-start mt-4">
                 
-                <Link to="/" className="w-full h-12 flex items-center gap-3 px-4 mb-2 cursor-pointer hover:text-white hover:bg-slate-600 rounded no-underline text-gray-500"> 
+                <Link to="/" className={linkClass('/')}> 
                     <FaFilm/> Filmes
                 </Link>
             
-                <Link to="/adicionar-filme" className="w-full h-12 flex items-center gap-3 px-4 mb-2 cursor-pointer hover:text-white hover:bg-slate-600 rounded no-underline text-gray-500">
+                <Link to="/adicionar-filme" className={linkClass('/adicionar-filme')}>
                     <FaPlusCircle/> Adicionar Filme
                 </Link>
                 
-                <Link to="/perfil" className="w-full h-12 flex items-center gap-3 px-4 mb-2 cursor-pointer hover:text-white hover:bg-slate-600 rounded no-underline text-gray-500">
+                <Link to="/perfil" className={linkClass('/perfil')}>
                     <FaRegUser/> Meu Perfil
                 </Link>
 

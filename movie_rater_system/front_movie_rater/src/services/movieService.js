@@ -46,5 +46,14 @@ export const movieService = {
         });
         if (!response.ok) throw new Error("Erro ao avaliar filme");
         return response.json();
+    },
+
+    userRatedMovies: async () => {
+        const response = await fetch(`${BASE_URL}/ratings/user_ratings/`, {
+            method: "GET",
+            headers:getHeaders(),
+        });
+        if (!response.ok) throw new Error("Erro ao buscar filmes");
+        return response.json();
     }
 };

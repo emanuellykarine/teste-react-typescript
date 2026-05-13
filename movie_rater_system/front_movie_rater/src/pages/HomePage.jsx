@@ -22,8 +22,10 @@ export default function HomePage() {
     if (error) return <h1 className='text-white'>{error}</h1>;
 
     return (
-        <div className='text-white pl-10 pt-8'>
-            <Header title={'Filmes'} description={'Confira todos os filmes cadastrados'}/>
+        <div className='text-white pl-10'>
+            <Header title={'Filmes'} 
+            breadcrumbs={[{label: "Filmes", path:'/'}]}
+            description={'Confira todos os filmes cadastrados'}/>
             <MovieList movies={movies} />
         </div>
     );

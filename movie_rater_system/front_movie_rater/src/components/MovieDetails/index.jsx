@@ -1,13 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-
 export default function MovieDetails({ movie }) {
     return (
-        <div>
-            <Link to="/" className='font-bold text-white hover:text-blue-300 mb-10 flex flex-col items-start'>
-                ← Voltar
-            </Link>
-            
+        <div>            
             <div className='flex gap-8'>
                 <img 
                     src={movie.poster_url} 

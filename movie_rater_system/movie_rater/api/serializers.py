@@ -19,6 +19,8 @@ class MovieSerializer(serializers.ModelSerializer):
         fields = ('id', 'title', 'description', 'year', 'genre', 'director', 'poster_url', 'number_of_ratings', 'avg_rating', 'user_rating')
 
 class RatingSerializer(serializers.ModelSerializer):
+    movie = MovieSerializer(read_only=True)  # ← retorna o objeto completo do filme
+
     class Meta:
         model = Rating
         fields = ('id', 'stars', 'user', 'movie')
