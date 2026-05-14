@@ -38,6 +38,31 @@ export const movieService = {
         return response.json();
     },
 
+    delete: async (movieId) => {
+        const response = await fetch(`${BASE_URL}/movies/${movieId}/`, {
+            method:"DELETE",
+            headers:getHeaders()
+        });
+        if (!response.ok) {
+            throw new Error('Error ao deletar filme');
+        }
+        return response;
+    }, 
+
+    update: async (movieId, movieData) => {
+        const response = await fetch(`${BASE_URL}/movies/`, {
+            method:"UPDATE",
+            headers:getHeaders(),
+            body: JSON.stringify(movieId, movieData)
+        });
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error('Erro do backend:', errorData);
+            throw new Error(JSON.stringify(errorData));
+        }
+        return response.json();
+    },
+
     rateMovie: async (id, stars) => {
         const response = await fetch(`${BASE_URL}/movies/${id}/rate_movie/`, {
             method: "POST",

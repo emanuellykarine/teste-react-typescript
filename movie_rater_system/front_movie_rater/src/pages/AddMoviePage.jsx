@@ -1,6 +1,7 @@
 import Header from "../components/Header";
 import { useState } from "react";
 import { movieService } from "../services/movieService";    
+import { useNavigate } from "react-router-dom";
 
 export default function AddMoviePage() {
     const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ export default function AddMoviePage() {
         director:'',
         poster_url:''
     });
+
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,6 +30,7 @@ export default function AddMoviePage() {
         try{
             await movieService.create(payload);
             alert('Filme adicionado com sucesso')
+            navigate(`/`)
         } catch (e) {
             console.error('Erro:', e);
             alert(`Erro ao adicionar filme: ${e.message}`)

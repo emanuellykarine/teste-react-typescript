@@ -50,7 +50,7 @@ export default function LoginPage({ onLogin }) {
                     
                     <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Usuário" className="h-14 rounded-md bg-[#242a44] border-none text-white placeholder-gray-200 p-2" required/>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Senha" className="h-14 rounded-md bg-[#242a44] border-none text-white placeholder-gray-200 p-2" required/>
-                    <button type="submit" className="h-14 rounded-md bg-violet-800 text-white font-bold text-lg border-none">'Entrar</button>
+                    <button type="submit" className="h-14 rounded-md bg-violet-800 text-white font-bold text-lg border-none">Entrar</button>
                 </form>
             </div>
 
