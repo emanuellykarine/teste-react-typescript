@@ -29,5 +29,15 @@ export const authService = {
 
     getUsername: () => {
         return localStorage.getItem('username');
+    },
+
+    register: async (username, password) => {
+        const response = await fetch(`${BASE_URL}api/users/`, {
+            method: "POST",
+            headers: getHeaders(),
+            body: JSON.stringify({ username, password })
+        });
+        if (!response.ok) throw new Error("Usuário ou senha inválidos");
+        return await response.json();
     }
 };

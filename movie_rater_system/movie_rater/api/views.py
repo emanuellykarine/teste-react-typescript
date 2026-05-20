@@ -12,6 +12,11 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
+    def get_permissions(self):
+        if self.action == 'create':
+            return []
+        return [IsAuthenticated()]
+
 # Create your views here.
 class MovieViewSet(viewsets.ModelViewSet):
     queryset = Movie.objects.all()

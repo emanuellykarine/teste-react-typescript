@@ -6,8 +6,9 @@ export default function LoginPage({ onLogin }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
-
-    const handleSubmit = async (e) => {
+    const [successMsg, setSuccessMsg] = useState(null);
+    const [isLoginView, setLoginView] = useState(true);
+    const handleSubmitLogin = async (e) => {
         e.preventDefault();
         setError(null);
 
@@ -19,8 +20,24 @@ export default function LoginPage({ onLogin }) {
         }
     };
 
+    const handleSubmitRegister = async (e) => {
+        e.preventDefault();
+        setError(null);
+
+        try {
+            await authService.register(username, password);
+            setSuccessMsg("Cadastro feito com sucesso, faça o login!")
+            setLoginView(true);
+            setUsername(''); // ← limpa o campo
+            setPassword(''); // ← limpa o campo
+        } catch (err) {
+            setError(err.message);
+        }
+    };
+
     return (
         <div className="min-h-screen flex bg-gray-800">
+
             <div className="w-1/2 h-screen overflow-hidden relative">
                 <img 
                     src="https://t2.tudocdn.net/687837?w=1920" 
@@ -39,18 +56,41 @@ export default function LoginPage({ onLogin }) {
                     <p className='text-white'>Movie</p>
                     <p className='text-purple-800'>Rate</p>
                 </div>
-                <p className="text-white m-0">Faça login para continuar</p>
+                {isLoginView ?
+                    <p className="text-white m-0">Faça login para continuar</p>
+                    :
+                    <p className="text-white m-0">Cadastre-se para continuar</p>
+                }
+                
 
-                <form onSubmit={handleSubmit} className="flex flex-col gap-2 mt-4 w-96">
+                <form onSubmit={isLoginView ? handleSubmitLogin : handleSubmitRegister} className="flex flex-col gap-2 mt-4 w-96">
                     {error && (
                         <p className='text-red-400 text-sm text-center bg-red-900/20 p-2 rounded'>
                             {error}
                         </p>
                     )}
+
+                    {successMsg && 
+                        <p className='text-green-400 text-sm text-center bg-green-900/20 p-2 rounded'>
+                            {successMsg}
+                        </p>
+                    }
+
                     
                     <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Usuário" className="h-14 rounded-md bg-[#242a44] border-none text-white placeholder-gray-200 p-2" required/>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Senha" className="h-14 rounded-md bg-[#242a44] border-none text-white placeholder-gray-200 p-2" required/>
-                    <button type="submit" className="h-14 rounded-md bg-violet-800 text-white font-bold text-lg border-none">Entrar</button>
+                    
+                    {isLoginView ? 
+                        <div className="w-96">
+                            <button type="submit" className="w-full h-14 rounded-md bg-violet-800 text-white font-bold text-lg border-none">Entrar</button>
+                            <div className="flex">
+                                <p className="text-white">Não tem uma conta? </p>
+                                <p className="cursor-pointer text-purple-400 underline pl-2 hover:text-purple-300" onClick={() => setLoginView(false)}>Cadastre-se</p>
+                            </div>
+                        </div>
+                        :
+                        <button type="submit" className="h-14 rounded-md bg-violet-800 text-white font-bold text-lg border-none">Cadastrar</button>
+                    }
                 </form>
             </div>
 
